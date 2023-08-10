@@ -1,0 +1,168 @@
+{
+    "slug": "abc",
+    "phase": "stop-time",
+    "activePlayer": "piestastedgood",
+    "players":
+    {
+        "tripswithtires":
+        {
+            "name": "tripswithtires",
+            "color": "yellow",
+            "workers": 13,
+            "canPass": false,
+            "workersUsedThisPhase": 0,
+            "passed": true,
+            "roads":
+            [
+                42,
+                60,
+                1,
+                45,
+                47,
+                48,
+                57,
+                62
+            ],
+            "canRoad":
+            [
+                58,
+                68
+            ],
+            "startNode": 30,
+            "endNode": 30,
+            "busCount": 3,
+            "timeyWimeys": 0,
+            "hasFirstPlayerToken": true
+        },
+        "piestastedgood":
+        {
+            "name": "piestastedgood",
+            "color": "red",
+            "workers": 13,
+            "canPass": false,
+            "workersUsedThisPhase": 0,
+            "passed": true,
+            "roads":
+            [
+                4
+            ],
+            "canRoad":
+            [
+                2,
+                3,
+                23,
+                5,
+                14,
+                25,
+                30
+            ],
+            "startNode": 1,
+            "endNode": 4,
+            "busCount": 3,
+            "timeyWimeys": 0,
+            "hasFirstPlayerToken": false
+        }
+    },
+    "workerAreas":
+    {
+        "build-road":
+        {
+            "name": "build-road",
+            "size": 6,
+            "reverse": true,
+            "workers":
+            [],
+            "actions":
+            []
+        },
+        "new-bus":
+        {
+            "name": "new-bus",
+            "size": 1,
+            "reverse": false,
+            "workers":
+            [],
+            "actions":
+            []
+        },
+        "more-people":
+        {
+            "name": "more-people",
+            "size": 6,
+            "reverse": false,
+            "workers":
+            [],
+            "actions":
+            []
+        },
+        "new-buildings":
+        {
+            "name": "new-buildings",
+            "size": 6,
+            "reverse": true,
+            "workers":
+            [],
+            "actions":
+            []
+        },
+        "stop-time":
+        {
+            "name": "stop-time",
+            "size": 1,
+            "reverse": false,
+            "workers":
+            [
+                "piestastedgood"
+            ],
+            "actions":
+            [
+                [
+                    "piestastedgood",
+                    1
+                ]
+            ]
+        },
+        "vroom":
+        {
+            "name": "vroom",
+            "size": 6,
+            "reverse": false,
+            "workers":
+            [],
+            "actions":
+            []
+        },
+        "first-player":
+        {
+            "name": "first-player",
+            "size": 1,
+            "reverse": false,
+            "workers":
+            [],
+            "actions":
+            []
+        }
+    },
+    "timeyWimeys": 5,
+    "time": "work",
+    "buildings":
+    {
+        "2": "work",
+        "3": "work",
+        "8": "home"
+    },
+    "people":
+    {
+        "31": 4,
+        "9": 3
+    },
+    "maxBuses": 3,
+    "information":
+    [
+        {
+            "who": "piestastedgood",
+            "what": "new-bus"
+        }
+    ],
+    "remainingPeople": 6
+}

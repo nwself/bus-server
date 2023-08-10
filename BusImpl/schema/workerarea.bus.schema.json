@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.theboardgame.party/workerarea.bus.schema.json",
+  "title": "Worker Area for Bus",
+  "description": "One of the seven worker placement areas on the board",
+  "type": "object"
+}

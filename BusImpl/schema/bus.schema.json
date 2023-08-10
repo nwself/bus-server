@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.theboardgame.party/bus.schema.json",
+  "title": "Bus: The Game",
+  "description": "A state of the game Bus",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "description": "Unique identifier to this game",
+      "type": "string"
+    },
+    "phase": {
+      "description": "Current game phase",
+      "type": "string",
+      "enum": [
+        "place-workers",
+        "build-road",
+        "new-bus",
+        "more-people",
+        "new-buildings",
+        "stop-time",
+        "vroom",
+        "first-player"
+      ]
+    },
+    "activePlayer": {
+      "description": "Current player (can this be limited to the keys of the players object?",
+      "type": "string"
+    },
+    "players": {
+      "description": "All players in this game",
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "https://schema.theboardgame.party/player.bus.schema.json"
+        }
+      },
+      "minItems": 2,
+      "uniqueItems": true
+    },
+    "workerAreas": {
+      "description": "Worker areas on the board",
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "https://schema.theboardgame.party/workerarea.bus.schema.json"
+        }
+      },
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true
+    },
+    "timeyWimeys": {
+      "description": "Number of clock stoppages remaining",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "time": {
+      "description": "Number of clock stoppages remaining",
+      "type": "string",
+      "enum": [
+        "home",
+        "work",
+        "pub"
+      ]
+    },
+    "buildings": {
+      "description": "Currently placed buildings",
+      "type": "object",
+      "patternProperties": {
+        "\\d": {
+          "description": "Type of building placed at node with ID == key",
+          "type": "string",
+          "enum": [
+            "home",
+            "work",
+            "pub"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "people": {
+      "description": "Locations of passengers on board",
+      "type": "object",
+      "patternProperties": {
+        "\\d": {
+          "description": "Number of passengers at node with ID == key",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "maxBuses": {
+      "description": "Max of each players bus count",
+      "type": "number",
+      "minimum": 1
+    },
+    "information": {
+      "description": "Information front end should display",
+      "type": "array"
+    },
+    "remainingPeople": {
+      "description": "Number of passengers left to be added to board",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 16
+    }
+  }
+}
